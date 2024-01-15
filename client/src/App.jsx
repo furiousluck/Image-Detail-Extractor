@@ -7,6 +7,7 @@ function App() {
   const [uploadResult, setUploadResult] = useState(null);
   const [previewURL, setPreviewURL] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -30,14 +31,21 @@ function App() {
     const formData = new FormData();
     formData.append('file', file);
 
-    axios.post('https://img-detail-extractor.onrender.com/upload', formData)
+    axios.post('https://img-detail-extractor.onrender.com/upload', formData,{
+      onUploadProgress:(progressEvent)=>{
+        const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+        setUploadProgress(progress);
+      }
+    })
       .then(res => {
         console.log(res);
         setUploadResult(res.data); // Assuming the server sends data as JSON
+        setUploadProgress(0);
       })
       .catch(err => {
         console.error(err);
         setUploadResult(null);
+        setUploadProgress(0);
       });
   };
 
@@ -46,7 +54,15 @@ function App() {
       <div>
         <input id='upload-name' type='file' onChange={handleFileChange} />
         <br />
-        <button onClick={handleUpload}>Upload</button>
+        {uploadProgress >0 ?(
+          <div>
+          <p>Uploading... {uploadProgress}%</p>
+          {/* You can style the loading bar as needed */}
+          <div style={{ width: `${uploadProgress}%`, height: '10px', backgroundColor: 'green' }}></div>
+        </div>
+        ):(
+          <button onClick={handleUpload}>Upload</button>
+        )}
       </div>
       <br/>
       <div className='result'>

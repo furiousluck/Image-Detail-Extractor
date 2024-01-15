@@ -30,7 +30,7 @@ function App() {
     const formData = new FormData();
     formData.append('file', file);
 
-    axios.post('http://localhost:3000/upload', formData)
+    axios.post('https://img-detail-extractor.onrender.com/upload', formData)
       .then(res => {
         console.log(res);
         setUploadResult(res.data); // Assuming the server sends data as JSON

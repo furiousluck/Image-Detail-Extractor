@@ -1,0 +1,61 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  padding-bottom: 0rem;
+}
+
+#upload-name{
+  padding: 0.6em;
+  background-color: rgb(22, 76, 151);
+  margin-bottom: 0.6em;
+  border-radius: 8px;
+
+}
+
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: green;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.result{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+}
+
+.result-1{
+  flex:70%;
+  margin-right: 0.6em;
+  justify-content: center;
+}
+
+.result-2 {
+  flex: 30%;
+  border-radius: 10%;
+}
+
+#file-upload-button{
+  border-radius: 8px;
+}
+
+.result-2-p{
+  text-align: left;
+  background-color: rgb(47, 53, 53);
+  border-radius: 8px;
+  padding: 0.6em;
+}
+
+h2{
+  margin-bottom: 0%;
+}

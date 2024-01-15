@@ -36,6 +36,6 @@ Instructions on how to install the project:
 ## Images
 ![image](https://github.com/furiousluck/Image-Detail-Extractor/assets/79402080/3bb3f519-75e2-4fd6-87d0-d9a16d3649ba)
 ![image](https://github.com/furiousluck/Image-Detail-Extractor/assets/79402080/f3cc1cd6-bcc0-4586-ae77-c8341fca0f74)
-
+![image](https://github.com/furiousluck/Image-Detail-Extractor/assets/79402080/45c95a2a-f1e2-48b8-a688-7d11e6bd56da)
 
 

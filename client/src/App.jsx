@@ -52,6 +52,7 @@ function App() {
   return (
     <div>
       <div>
+        <h1>Image Details Extractor🖼️</h1>
         <input id='upload-name' type='file' onChange={handleFileChange} />
         <br />
         {uploadProgress >0 ?(

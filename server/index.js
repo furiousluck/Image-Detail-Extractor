@@ -6,9 +6,6 @@ const path = require("path");
 const { information } = require("./utils/info");
 const fse = require("fs-extra");
 
-
-require("dotenv").config();
-
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
@@ -55,7 +52,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   res.end();
 });
 
-const PORT = 3000 || process.env.PORT;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

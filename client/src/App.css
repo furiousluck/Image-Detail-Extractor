@@ -38,6 +38,7 @@ button {
   flex:70%;
   margin-right: 0.6em;
   justify-content: center;
+  height: 550px;
 }
 
 .result-2 {

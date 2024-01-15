@@ -67,7 +67,7 @@ function App() {
       <br/>
       <div className='result'>
         <div className='result-1'>
-        {previewURL && <img src={previewURL} alt='Preview' style={{ maxWidth: '100%' }} />}
+        {previewURL && <img src={previewURL} alt='Preview' style={{ maxWidth: '100%', height: '100%' }} />}
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </div>
         <div className='result-2'>

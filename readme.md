@@ -20,7 +20,7 @@ Instructions on how to install the project:
 
 ## Deployment
 - Deployed Server on Render
-- [Link](https://image-detail-extractor.onrender.com)
+- [Link](https://img-detail-extractor.onrender.com)
 - Note: The app is deployed on a free tier, so it might take some time to load the first time.
 
 - Deployed Client on Vercel
@@ -34,6 +34,8 @@ Instructions on how to install the project:
 - Node JS
 
 ## Images
+![image](https://github.com/furiousluck/Image-Detail-Extractor/assets/79402080/3bb3f519-75e2-4fd6-87d0-d9a16d3649ba)
+![image](https://github.com/furiousluck/Image-Detail-Extractor/assets/79402080/f3cc1cd6-bcc0-4586-ae77-c8341fca0f74)
 
 
 

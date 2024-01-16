@@ -72,7 +72,6 @@ function App() {
     <div>
       <div>
         <h1>Image Details Extractor🖼️</h1>
-        <input id='upload-name' type='file' onChange={handleFileChange} />
         <br />
         {!isServerReady ? (
           <div>
@@ -87,7 +86,11 @@ function App() {
           <div style={{ width: `${uploadProgress}%`, height: '10px', backgroundColor: 'green' }}></div>
         </div>
         ):(
-          <button onClick={handleUpload}>Upload</button>
+          <div>
+            <input id='upload-name' type='file' onChange={handleFileChange} />
+            <br />
+            <button onClick={handleUpload}>Upload</button>
+          </div>
         )}
       </div>
       <br/>

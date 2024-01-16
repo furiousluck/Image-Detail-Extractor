@@ -17,7 +17,6 @@ function App() {
         setServerReady(true);
       })
       .catch(() => {
-        // Server is not ready yet, set a timeout to check again
         setTimeout(checkServerStatus, 1000);
       });
   };

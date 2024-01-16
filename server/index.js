@@ -52,6 +52,11 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   res.end();
 });
 
+app.get("/status", (req, res) => {
+  res.json({ status: "Server is running" });
+});
+
+
 const PORT = 3000;
 
 app.listen(PORT, () => {

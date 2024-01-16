@@ -8,6 +8,21 @@ function App() {
   const [previewURL, setPreviewURL] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [isServerReady, setServerReady] = useState(false);
+
+
+  const checkServerStatus = () => {
+    axios.get('https://img-detail-extractor.onrender.com/status')
+      .then(() => {
+        setServerReady(true);
+      })
+      .catch(() => {
+        // Server is not ready yet, set a timeout to check again
+        setTimeout(checkServerStatus, 1000);
+      });
+  };
+
+  
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -21,6 +36,11 @@ function App() {
       setErrorMessage('')
     }
   };
+
+  const handleStatus = () =>{
+    checkServerStatus();
+  }
+
 
   const handleUpload = () => {
     if (!file) {
@@ -55,7 +75,13 @@ function App() {
         <h1>Image Details Extractor🖼️</h1>
         <input id='upload-name' type='file' onChange={handleFileChange} />
         <br />
-        {uploadProgress >0 ?(
+        {!isServerReady ? (
+          <div>
+            <p>Server is starting, please wait...</p>
+            <button onClick={handleStatus}>Refresh Server!!</button>
+          </div>
+        )
+        :uploadProgress >0 ?(
           <div>
           <p>Uploading... {uploadProgress}%</p>
           {/* You can style the loading bar as needed */}

@@ -76,7 +76,7 @@ function App() {
         {!isServerReady ? (
           <div>
             <p>Server is starting, please wait...</p>
-            <button onClick={handleStatus}>Refresh Server!!</button>
+            <button onClick={handleStatus}>Refresh Server! Click Me!</button>
           </div>
         )
         :uploadProgress >0 ?(
